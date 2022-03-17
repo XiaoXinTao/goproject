@@ -10,8 +10,8 @@ import (
 
 	"github.com/apache/thrift/lib/go/thrift"
 
+	"account_rpc/kitex_gen/base"
 	"github.com/cloudwego/kitex/pkg/protocol/bthrift"
-	"project.ecommerce.account_rpc/kitex_gen/base"
 )
 
 // unused protection

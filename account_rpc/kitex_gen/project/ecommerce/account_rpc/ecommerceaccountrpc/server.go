@@ -2,8 +2,8 @@
 package ecommerceaccountrpc
 
 import (
+	"account_rpc/kitex_gen/project/ecommerce/account_rpc"
 	"github.com/cloudwego/kitex/server"
-	"project.ecommerce.account_rpc/kitex_gen/project/ecommerce/account_rpc"
 )
 
 // NewServer creates a server.Server with the given handler and options.

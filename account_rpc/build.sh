@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-RUN_NAME="project.ecommerce.account_rpc"
+RUN_NAME="account_rpc"
 
 mkdir -p output/bin
 cp script/* output/

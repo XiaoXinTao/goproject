@@ -27,5 +27,5 @@ const (
 
 const (
 	// 登录
-	keyUserToken     = "account_rpc::user:%v:token"      // web_server:app:{app_id}:user:{sdk_open_id}:token
+	keyUserToken     = "account_rpc2::user:%v:token"      // web_server:app:{app_id}:user:{sdk_open_id}:token
 )

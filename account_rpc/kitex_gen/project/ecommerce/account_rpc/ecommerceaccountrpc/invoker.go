@@ -3,8 +3,8 @@
 package ecommerceaccountrpc
 
 import (
+	"account_rpc/kitex_gen/project/ecommerce/account_rpc"
 	"github.com/cloudwego/kitex/server"
-	"project.ecommerce.account_rpc/kitex_gen/project/ecommerce/account_rpc"
 )
 
 // NewInvoker creates a server.Invoker with the given handler and options.

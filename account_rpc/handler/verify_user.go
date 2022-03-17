@@ -7,11 +7,10 @@ import (
 
 	"github.com/cloudwego/kitex/pkg/klog"
 
-	"project.ecommerce.account_rpc/consts"
-	"project.ecommerce.account_rpc/dal"
-	"project.ecommerce.account_rpc/kitex_gen/project/ecommerce/account_rpc"
+	"account_rpc/consts"
+	"account_rpc/dal"
+	"account_rpc/kitex_gen/project/ecommerce/account_rpc"
 )
-
 func VerifyUser(ctx context.Context, req *account_rpc.VerifyUserRequest) (resp *account_rpc.VerifyUserResponse, err error) {
 	resp = account_rpc.NewVerifyUserResponse()
 	if req.PassportUid <= 0 || req.AccessToken <= 0 {

@@ -3,8 +3,8 @@ package main
 import (
 	"context"
 
-	"project.ecommerce.account_rpc/handler"
-	"project.ecommerce.account_rpc/kitex_gen/project/ecommerce/account_rpc"
+	"account_rpc/handler"
+	"account_rpc/kitex_gen/project/ecommerce/account_rpc"
 )
 
 // EcommerceAccountRpcImpl implements the last service interface defined in the IDL.

@@ -6,7 +6,7 @@ import (
 
 	"github.com/cloudwego/kitex/pkg/klog"
 
-	"project.ecommerce.account_rpc/kitex_gen/project/ecommerce/account_rpc"
+	"account_rpc/kitex_gen/project/ecommerce/account_rpc"
 )
 
 func Login(ctx context.Context, req *account_rpc.LoginRequest) (resp *account_rpc.LoginResponse, err error) {

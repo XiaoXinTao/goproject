@@ -4,7 +4,7 @@ import (
 	"context"
 	"time"
 
-	"project.ecommerce.account_rpc/model"
+	"account_rpc/model"
 )
 
 func CreateUser(ctx context.Context, passportUid int64, passwordCode string) error {

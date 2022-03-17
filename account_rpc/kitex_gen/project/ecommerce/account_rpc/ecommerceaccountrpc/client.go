@@ -3,10 +3,10 @@
 package ecommerceaccountrpc
 
 import (
+	"account_rpc/kitex_gen/project/ecommerce/account_rpc"
 	"context"
 	"github.com/cloudwego/kitex/client"
 	"github.com/cloudwego/kitex/client/callopt"
-	"project.ecommerce.account_rpc/kitex_gen/project/ecommerce/account_rpc"
 )
 
 // Client is designed to provide IDL-compatible methods with call-option parameter for kitex framework.

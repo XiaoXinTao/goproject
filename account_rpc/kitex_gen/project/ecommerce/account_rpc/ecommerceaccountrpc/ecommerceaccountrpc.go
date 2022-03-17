@@ -3,10 +3,10 @@
 package ecommerceaccountrpc
 
 import (
+	"account_rpc/kitex_gen/project/ecommerce/account_rpc"
 	"context"
 	"github.com/cloudwego/kitex/client"
 	kitex "github.com/cloudwego/kitex/pkg/serviceinfo"
-	"project.ecommerce.account_rpc/kitex_gen/project/ecommerce/account_rpc"
 )
 
 func serviceInfo() *kitex.ServiceInfo {

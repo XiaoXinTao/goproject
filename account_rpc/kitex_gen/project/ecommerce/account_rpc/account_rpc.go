@@ -3,10 +3,10 @@
 package account_rpc
 
 import (
+	"account_rpc/kitex_gen/base"
 	"context"
 	"fmt"
 	"github.com/apache/thrift/lib/go/thrift"
-	"project.ecommerce.account_rpc/kitex_gen/base"
 	"strings"
 )
 

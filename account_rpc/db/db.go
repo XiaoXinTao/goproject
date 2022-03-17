@@ -21,4 +21,3 @@ func InitMysql() {
 func getDb(ctx context.Context) *gorm.DB {
 	return db.WithContext(ctx)
 }
-
