@@ -4,7 +4,7 @@ import (
 	"context"
 	"time"
 
-	"account_rpc/model"
+	"github.com/XiaoXinTao/goproject/account_rpc/model"
 )
 
 func CreateUser(ctx context.Context, passportUid int64, passwordCode string) error {

@@ -3,16 +3,17 @@ package main
 import (
 	"log"
 
-	"account_rpc/dal"
-	account_rpc "account_rpc/kitex_gen/project/ecommerce/account_rpc/ecommerceaccountrpc"
-	"account_rpc/logger"
+	"github.com/XiaoXinTao/goproject/account_rpc/dal"
+	"github.com/XiaoXinTao/goproject/account_rpc/db"
+	account_rpc "github.com/XiaoXinTao/goproject/account_rpc/kitex_gen/project/ecommerce/account_rpc/ecommerceaccountrpc"
+	"github.com/XiaoXinTao/goproject/account_rpc/logger"
 )
 
 func main() {
 	svr := account_rpc.NewServer(new(EcommerceAccountRpcImpl))
-
-	dal.InitRedis()
 	logger.InitKlog()
+	dal.InitRedis()
+	db.InitMysql()
 	err := svr.Run()
 
 	if err != nil {

@@ -1,4 +1,4 @@
-module base_common
+module github.com/XiaoXinTao/goproject/base_common
 
 go 1.17
 

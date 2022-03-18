@@ -2,7 +2,7 @@
 package ecommerceaccount
 
 import (
-	"account_rpc/kitex_gen/xintao/project/ecommerce"
+	"github.com/XiaoXinTao/goproject/account_rpc/kitex_gen/xintao/project/ecommerce"
 	"github.com/cloudwego/kitex/server"
 )
 

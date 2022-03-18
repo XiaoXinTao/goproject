@@ -2,9 +2,7 @@ package main
 
 import (
 	"context"
-
-	"account_rpc/handler"
-	"account_rpc/kitex_gen/project/ecommerce/account_rpc"
+	"github.com/XiaoXinTao/goproject/account_rpc/kitex_gen/project/ecommerce/account_rpc"
 )
 
 // EcommerceAccountRpcImpl implements the last service interface defined in the IDL.
@@ -13,7 +11,7 @@ type EcommerceAccountRpcImpl struct{}
 // VerifyUser implements the EcommerceAccountRpcImpl interface.
 func (s *EcommerceAccountRpcImpl) VerifyUser(ctx context.Context, req *account_rpc.VerifyUserRequest) (resp *account_rpc.VerifyUserResponse, err error) {
 	// TODO: Your code here...
-	return handler.VerifyUser(ctx, req)
+	return
 }
 
 // Login implements the EcommerceAccountRpcImpl interface.

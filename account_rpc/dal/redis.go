@@ -2,7 +2,6 @@ package dal
 
 import (
 	"time"
-
 	"github.com/go-redis/redis"
 )
 

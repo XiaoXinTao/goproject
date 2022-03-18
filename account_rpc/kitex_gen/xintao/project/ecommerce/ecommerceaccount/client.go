@@ -3,8 +3,8 @@
 package ecommerceaccount
 
 import (
-	"account_rpc/kitex_gen/xintao/project/ecommerce"
 	"context"
+	"github.com/XiaoXinTao/goproject/account_rpc/kitex_gen/xintao/project/ecommerce"
 	"github.com/cloudwego/kitex/client"
 	"github.com/cloudwego/kitex/client/callopt"
 )

@@ -10,8 +10,8 @@ import (
 
 	"github.com/apache/thrift/lib/go/thrift"
 
-	"account_rpc/kitex_gen/base"
-	"account_rpc/kitex_gen/xintao/project/ecommerce"
+	"github.com/XiaoXinTao/goproject/account_rpc/kitex_gen/base"
+	"github.com/XiaoXinTao/goproject/account_rpc/kitex_gen/xintao/project/ecommerce"
 	"github.com/cloudwego/kitex/pkg/protocol/bthrift"
 )
 

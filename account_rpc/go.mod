@@ -1,9 +1,9 @@
-module account_rpc
+module github.com/XiaoXinTao/goproject/account_rpc
 
 go 1.17
 
 require (
-	github.com/apache/thrift v0.13.0
+	github.com/apache/thrift v0.16.0
 	github.com/cloudwego/kitex v0.2.0
 	github.com/go-redis/redis v6.15.9+incompatible
 	gorm.io/driver/mysql v1.3.2

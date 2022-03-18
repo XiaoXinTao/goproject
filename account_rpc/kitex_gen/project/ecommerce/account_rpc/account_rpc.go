@@ -3,9 +3,9 @@
 package account_rpc
 
 import (
-	"account_rpc/kitex_gen/base"
 	"context"
 	"fmt"
+	"github.com/XiaoXinTao/goproject/account_rpc/kitex_gen/base"
 	"github.com/apache/thrift/lib/go/thrift"
 	"strings"
 )
