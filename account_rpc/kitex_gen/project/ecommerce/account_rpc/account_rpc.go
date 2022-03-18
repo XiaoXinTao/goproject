@@ -766,11 +766,16 @@ func (p *LoginRequest) Field255DeepEqual(src *base.Base) bool {
 }
 
 type LoginResponse struct {
-	BaseResp *base.BaseResp `thrift:"BaseResp,255" json:"BaseResp"`
+	AccessToken string         `thrift:"AccessToken,1,required" json:"AccessToken"`
+	BaseResp    *base.BaseResp `thrift:"BaseResp,255" json:"BaseResp"`
 }
 
 func NewLoginResponse() *LoginResponse {
 	return &LoginResponse{}
+}
+
+func (p *LoginResponse) GetAccessToken() (v string) {
+	return p.AccessToken
 }
 
 var LoginResponse_BaseResp_DEFAULT *base.BaseResp
@@ -781,11 +786,15 @@ func (p *LoginResponse) GetBaseResp() (v *base.BaseResp) {
 	}
 	return p.BaseResp
 }
+func (p *LoginResponse) SetAccessToken(val string) {
+	p.AccessToken = val
+}
 func (p *LoginResponse) SetBaseResp(val *base.BaseResp) {
 	p.BaseResp = val
 }
 
 var fieldIDToName_LoginResponse = map[int16]string{
+	1:   "AccessToken",
 	255: "BaseResp",
 }
 
@@ -797,6 +806,7 @@ func (p *LoginResponse) Read(iprot thrift.TProtocol) (err error) {
 
 	var fieldTypeId thrift.TType
 	var fieldId int16
+	var issetAccessToken bool = false
 
 	if _, err = iprot.ReadStructBegin(); err != nil {
 		goto ReadStructBeginError
@@ -812,6 +822,17 @@ func (p *LoginResponse) Read(iprot thrift.TProtocol) (err error) {
 		}
 
 		switch fieldId {
+		case 1:
+			if fieldTypeId == thrift.STRING {
+				if err = p.ReadField1(iprot); err != nil {
+					goto ReadFieldError
+				}
+				issetAccessToken = true
+			} else {
+				if err = iprot.Skip(fieldTypeId); err != nil {
+					goto SkipFieldError
+				}
+			}
 		case 255:
 			if fieldTypeId == thrift.STRUCT {
 				if err = p.ReadField255(iprot); err != nil {
@@ -836,6 +857,10 @@ func (p *LoginResponse) Read(iprot thrift.TProtocol) (err error) {
 		goto ReadStructEndError
 	}
 
+	if !issetAccessToken {
+		fieldId = 1
+		goto RequiredFieldNotSetError
+	}
 	return nil
 ReadStructBeginError:
 	return thrift.PrependError(fmt.Sprintf("%T read struct begin error: ", p), err)
@@ -850,6 +875,17 @@ ReadFieldEndError:
 	return thrift.PrependError(fmt.Sprintf("%T read field end error", p), err)
 ReadStructEndError:
 	return thrift.PrependError(fmt.Sprintf("%T read struct end error: ", p), err)
+RequiredFieldNotSetError:
+	return thrift.NewTProtocolExceptionWithType(thrift.INVALID_DATA, fmt.Errorf("required field %s is not set", fieldIDToName_LoginResponse[fieldId]))
+}
+
+func (p *LoginResponse) ReadField1(iprot thrift.TProtocol) error {
+	if v, err := iprot.ReadString(); err != nil {
+		return err
+	} else {
+		p.AccessToken = v
+	}
+	return nil
 }
 
 func (p *LoginResponse) ReadField255(iprot thrift.TProtocol) error {
@@ -866,6 +902,10 @@ func (p *LoginResponse) Write(oprot thrift.TProtocol) (err error) {
 		goto WriteStructBeginError
 	}
 	if p != nil {
+		if err = p.writeField1(oprot); err != nil {
+			fieldId = 1
+			goto WriteFieldError
+		}
 		if err = p.writeField255(oprot); err != nil {
 			fieldId = 255
 			goto WriteFieldError
@@ -887,6 +927,23 @@ WriteFieldStopError:
 	return thrift.PrependError(fmt.Sprintf("%T write field stop error: ", p), err)
 WriteStructEndError:
 	return thrift.PrependError(fmt.Sprintf("%T write struct end error: ", p), err)
+}
+
+func (p *LoginResponse) writeField1(oprot thrift.TProtocol) (err error) {
+	if err = oprot.WriteFieldBegin("AccessToken", thrift.STRING, 1); err != nil {
+		goto WriteFieldBeginError
+	}
+	if err := oprot.WriteString(p.AccessToken); err != nil {
+		return err
+	}
+	if err = oprot.WriteFieldEnd(); err != nil {
+		goto WriteFieldEndError
+	}
+	return nil
+WriteFieldBeginError:
+	return thrift.PrependError(fmt.Sprintf("%T write field 1 begin error: ", p), err)
+WriteFieldEndError:
+	return thrift.PrependError(fmt.Sprintf("%T write field 1 end error: ", p), err)
 }
 
 func (p *LoginResponse) writeField255(oprot thrift.TProtocol) (err error) {
@@ -919,12 +976,22 @@ func (p *LoginResponse) DeepEqual(ano *LoginResponse) bool {
 	} else if p == nil || ano == nil {
 		return false
 	}
+	if !p.Field1DeepEqual(ano.AccessToken) {
+		return false
+	}
 	if !p.Field255DeepEqual(ano.BaseResp) {
 		return false
 	}
 	return true
 }
 
+func (p *LoginResponse) Field1DeepEqual(src string) bool {
+
+	if strings.Compare(p.AccessToken, src) != 0 {
+		return false
+	}
+	return true
+}
 func (p *LoginResponse) Field255DeepEqual(src *base.BaseResp) bool {
 
 	if !p.BaseResp.DeepEqual(src) {

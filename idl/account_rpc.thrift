@@ -19,6 +19,7 @@ struct LoginRequest {
 }
 
 struct LoginResponse {
+    1: required string AccessToken, //
     255: base.BaseResp BaseResp,
 }
 
