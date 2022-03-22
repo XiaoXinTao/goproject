@@ -42,6 +42,12 @@ func NewSnowFlake() *SnowFlake {
 	}
 }
 
+var snowFlake *SnowFlake
+
+func InitSnowFlake() {
+	snowFlake = NewSnowFlake()
+}
+
 func (s *SnowFlake) NextVal(ctx context.Context) int64 {
 	s.Lock()
 	now := time.Now().UnixNano() / 1000000 // 转毫秒

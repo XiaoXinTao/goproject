@@ -2,6 +2,8 @@ package main
 
 import (
 	"context"
+
+	"github.com/XiaoXinTao/goproject/account_rpc/handler"
 	"github.com/XiaoXinTao/goproject/account_rpc/kitex_gen/project/ecommerce/account_rpc"
 )
 
@@ -11,17 +13,17 @@ type EcommerceAccountRpcImpl struct{}
 // VerifyUser implements the EcommerceAccountRpcImpl interface.
 func (s *EcommerceAccountRpcImpl) VerifyUser(ctx context.Context, req *account_rpc.VerifyUserRequest) (resp *account_rpc.VerifyUserResponse, err error) {
 	// TODO: Your code here...
-	return
+	return handler.VerifyUser(ctx, req)
 }
 
 // Login implements the EcommerceAccountRpcImpl interface.
 func (s *EcommerceAccountRpcImpl) Login(ctx context.Context, req *account_rpc.LoginRequest) (resp *account_rpc.LoginResponse, err error) {
 	// TODO: Your code here...
-	return
+	return handler.Login(ctx, req)
 }
 
 // Logout implements the EcommerceAccountRpcImpl interface.
 func (s *EcommerceAccountRpcImpl) Logout(ctx context.Context, req *account_rpc.LogoutRequest) (resp *account_rpc.LogoutResponse, err error) {
 	// TODO: Your code here...
-	return
+	return handler.Logout(ctx, req)
 }

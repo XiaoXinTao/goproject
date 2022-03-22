@@ -35,3 +35,21 @@ func GetUserToken(ctx context.Context, PassportUid string) (string, error) {
 	}
 	return val, nil
 }
+
+func DelUserToken(ctx context.Context, PassportUid string) error {
+	if len(PassportUid) <= 0 {
+		klog.CtxErrorf(ctx, "DelUserToken 缺少参数")
+		return errors.New("DelUserToken 缺少参数")
+	}
+	Key := fmt.Sprintln(keyUserToken, PassportUid)
+	err := rdb.Del(Key).Err()
+	if err != nil {
+		klog.CtxErrorf(ctx, "DelUserToken redis del error, err = %+v", err)
+		return err
+	}
+	return nil
+}
+
+func GenAccessToken(ctx context.Context) int64 {
+	return snowFlake.NextVal(ctx)
+}
